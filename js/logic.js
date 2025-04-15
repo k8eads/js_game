@@ -4,8 +4,6 @@ let wins = 0;
 let ties = 0;
 let losses = 0; 
 
-
-
 function boulder() {
     let cpuChoice = Math.floor(Math.random() * 3) + 1;
     if (cpuChoice === 1) { //Boulder, tie
@@ -26,11 +24,38 @@ function boulder() {
 
 function parchment() {
     let cpuChoice = Math.floor(Math.random() * 3) + 1;
+    if (cpuChoice === 1) { //Boulder, win
+        document.getElementById('cpu-img').src = "svg/scissors.svg";
+        document.getElementById('outcome').innerHTML = "Its a win!";
+        wins++;
+    } else if (cpuChoice === 2) { //Parchment, tie
+        document.getElementById('cpu-img').src = "svg/rock.svg";
+        document.getElementById('outcome').innerHTML = "Its a tie!";
+        ties++;
+    } else { //Shears, loss
+        document.getElementById('cpu-img').src = "svg/paper.svg";
+        document.getElementById('outcome').innerHTML = "Its a loss!";
+        losses++;
+    }
+    set();
 }
 
 function shears() {
     let cpuChoice = Math.floor(Math.random() * 3) + 1;
-
+    if (cpuChoice === 1) { //Boulder, loss
+        document.getElementById('cpu-img').src = "svg/paper.svg";
+        document.getElementById('outcome').innerHTML = "Its a loss!";
+        losses++;
+    } else if (cpuChoice === 2) { //Parchment, win
+        document.getElementById('cpu-img').src = "svg/scissors.svg";
+        document.getElementById('outcome').innerHTML = "Its a win!";
+        wins++;
+    } else { //Shears, tie
+        document.getElementById('cpu-img').src = "svg/rock.svg";
+        document.getElementById('outcome').innerHTML = "Its a tie!";
+        ties++;
+    }
+    set();
 }
 
 function set() {
@@ -42,9 +67,13 @@ function set() {
     document.getElementById('losses').innerHTML = sessionStorage.getItem("lossCount");
 }
 function reset() {
-    sessionStorage.setItem("winCount", 0);
-    sessionStorage.setItem("tieCount", 0);
-    sessionStorage.setItem("lossCount", 0);
+    wins = 0;
+    ties = 0;
+    losses = 0;
+
+    sessionStorage.setItem("winCount", wins);
+    sessionStorage.setItem("tieCount", ties);
+    sessionStorage.setItem("lossCount", losses);
     
     document.getElementById('wins').innerHTML = sessionStorage.getItem("winCount");
     document.getElementById('ties').innerHTML = sessionStorage.getItem("tieCount");
