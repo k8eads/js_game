@@ -4,32 +4,32 @@ let wins = 0;
 let ties = 0;
 let losses = 0; 
 
-function random() {
-    let randomNum = Math.floor(Math.random() * 3) + 1;
-}
+
 
 function boulder() {
-    let cpuChoice = random();
-    if (cpuChoice === 1) { //Boulder
-        document.getElementById('cpu-img').src = "";
+    let cpuChoice = Math.floor(Math.random() * 3) + 1;
+    if (cpuChoice === 1) { //Boulder, tie
+        document.getElementById('cpu-img').src = "svg/rock.svg";
         document.getElementById('outcome').innerHTML = "Its a tie!";
         ties++;
-    } else if (cpuChoice === 2) { //Parchment
-
+    } else if (cpuChoice === 2) { //Parchment, loss
+        document.getElementById('cpu-img').src = "svg/paper.svg";
+        document.getElementById('outcome').innerHTML = "Its a loss!";
         losses++;
-    } else { //Shears
-
+    } else { //Shears, win
+        document.getElementById('cpu-img').src = "svg/scissors.svg";
+        document.getElementById('outcome').innerHTML = "Its a win!";
         wins++;
     }
     set();
 }
 
 function parchment() {
-    let cpuChoice = random();
+    let cpuChoice = Math.floor(Math.random() * 3) + 1;
 }
 
 function shears() {
-    let cpuChoice = random();
+    let cpuChoice = Math.floor(Math.random() * 3) + 1;
 
 }
 

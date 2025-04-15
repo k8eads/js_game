@@ -11,23 +11,34 @@
         <h2>Boulder beats shears. Shears beats parchment. Parchment beats boulder. Have fun!</h2>
     </article>
     <article> Left Panel
-        <section> /*-- Scoreboard --*/
-            <div>Wins</div>
-            <div>Losses</div>
-            <div>Ties</div>
+        <section class="scoreboard"> /*-- Scoreboard --*/
+            <h2 id="outcome">Outcome</h2>
+            <div>
+                <p id="wins">0</p>
+                Wins
+            </div>
+            <div>
+                <p id="losses">0</p>
+                Losses
+            </div>
+            <div>
+                <p id="ties">0</p>
+                Ties
+            </div>
         </section>
         <section>Reset</section>
     </article>
 
     <article> Right Panel
-    <section>/*-- Player Choice --*/
-        <div>Boulder</div>
+    <section> Player Choice
+        <img src="svg/rock.svg" alt="boulder" onclick="boulder()">
         <div>Parchment</div>
         <div>Shears</div>
     </section> 
     <section> /*-- Computer Choice --*/
-
+        <img id="cpu-img" src="svg/mystery.svg" alt="">
     </section>
     </article>  
+    <script src="js/logic.js"></script>
 </body>
 </html>
