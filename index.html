@@ -15,11 +15,13 @@
         <h2>Boulder beats shears. Shears beats parchment. Parchment beats boulder. Have fun!</h2>
     </article>
     <article>
-    <section class="pchoice">
+    <section>
         <h2>Player Choice</h2>
-        <img src="svg/boulder.svg" alt="boulder" onclick="boulder()">
-        <img src="svg/parchment.svg" alt="parchment" onclick="parchment()">
-        <img src="svg/shears.svg" alt="shears" onclick="shears()">
+        <div class="p-choice">
+            <img src="svg/boulder.svg" alt="boulder" onclick="boulder()">
+            <img src="svg/parchment.svg" alt="parchment" onclick="parchment()">
+            <img src="svg/shears.svg" alt="shears" onclick="shears()">
+        </div>
     </section> 
     <section class="cpu-choice"> 
         <h2>Opponent Choice</h2>
@@ -42,9 +44,8 @@
                 <h3>LOSSES</h3>
             </div>
         </section>
-        <div class="container">
-            <h3 class="button" onclick="reset()">Reset</h3>
-            <img class="background" src="svg/parchment.svg" alt="parchment" onclick="parchment()">    
+        <div>
+            <h3><button onclick="reset()">RESET</button></h3>
         </div>
     </article>
     <script src="js/logic.js"></script>

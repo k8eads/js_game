@@ -9,7 +9,6 @@
     --dred: #773344;
     --red: #d44d5c;
 
-    --parchment: url("../svg/parchment.svg");
     font-size: 62.5%; 
 }
 
@@ -62,21 +61,25 @@ p {
     color: var(--dblue);
 }
 
-h3.button{
-    display: inline-block;
-}
-
-.background {
-    display: inline-block;
-}
-
-
 img {
     width: auto;
     height: 100px;
     padding: 1rem;
 }
 
+button {
+    height: 3.4rem;
+    width: auto;
+    border-radius: 5%;
+    border-width: .5rem;
+    border-color: var(--dred);
+    background-color: var(--background);
+    border-style: solid;
+}
+
+button:hover {
+    border-color: var(--red);
+}
 
 section.scoreboard {
     display: grid;
@@ -91,14 +94,15 @@ section.cpu-choice {
     justify-content: center;
 }
 
-.container {
-    position: relative;
-    text-align: center;
+.p-choice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 560px)  {
+    .p-choice {flex-direction:column;}
   }
 
-.button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
