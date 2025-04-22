@@ -1,0 +1,104 @@
+/* primary variables */
+:root {
+    --background: #F5F0E0;
+    --hfont: "MedievalSharp", cursive;
+    --bfont: "Bellefair", serif; 
+
+    --dblue: #183446;
+    --blue: #046e8f;
+    --dred: #773344;
+    --red: #d44d5c;
+
+    --parchment: url("../svg/parchment.svg");
+    font-size: 62.5%; 
+}
+
+body {
+    background-color: var(--background);
+    margin: auto;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;     
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1, h2, h3, p {
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--hfont);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.2rem;
+    color: var(--dblue);
+    justify-content: center;
+}
+
+h2 {
+    font-family: var(--bfont);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--blue);
+}
+
+h3, p {
+    font-family: var(--bfont);
+    font-weight: 800;
+    font-style: normal;
+    color: var(--dred);  
+}
+
+p {
+    color: var(--dblue);
+}
+
+h3.button{
+    display: inline-block;
+}
+
+.background {
+    display: inline-block;
+}
+
+
+img {
+    width: auto;
+    height: 100px;
+    padding: 1rem;
+}
+
+
+section.scoreboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+
+}
+section.cpu-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+  }
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

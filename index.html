@@ -4,41 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boulder, Parchment, Shears</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <article>
+    <article class="header">
         <h1>Boulder, Parchment, Shears</h1>
         <h2>Boulder beats shears. Shears beats parchment. Parchment beats boulder. Have fun!</h2>
     </article>
-    <article> Left Panel
-        <section class="scoreboard"> /*-- Scoreboard --*/
-            <h2 id="outcome">Outcome</h2>
+    <article>
+    <section class="pchoice">
+        <h2>Player Choice</h2>
+        <img src="svg/boulder.svg" alt="boulder" onclick="boulder()">
+        <img src="svg/parchment.svg" alt="parchment" onclick="parchment()">
+        <img src="svg/shears.svg" alt="shears" onclick="shears()">
+    </section> 
+    <section class="cpu-choice"> 
+        <h2>Opponent Choice</h2>
+        <img id="cpu-img" src="svg/question.svg" alt="opponent choice">
+    </section>
+    </article>  
+    <article class="outcome">
+        <h2 id="outcome">Outcome</h2>
+        <section class="scoreboard">
             <div>
                 <p id="wins">0</p>
-                Wins
-            </div>
-            <div>
-                <p id="losses">0</p>
-                Losses
+                <h3>WINS</h3>
             </div>
             <div>
                 <p id="ties">0</p>
-                Ties
+                <h3>TIES</h3>
+            </div>
+            <div>
+                <p id="losses">0</p>
+                <h3>LOSSES</h3>
             </div>
         </section>
-        <section onclick="reset()">Reset</section>
+        <div class="container">
+            <h3 class="button" onclick="reset()">Reset</h3>
+            <img class="background" src="svg/parchment.svg" alt="parchment" onclick="parchment()">    
+        </div>
     </article>
-
-    <article> Right Panel
-    <section> Player Choice
-        <img src="svg/rock.svg" alt="boulder" onclick="boulder()">
-        <img src="svg/paper.svg" alt="boulder" onclick="parchment()">
-        <img src="svg/scissors.svg" alt="boulder" onclick="shears()">
-    </section> 
-    <section> /*-- Computer Choice --*/
-        <img id="cpu-img" src="svg/mystery.svg" alt="">
-    </section>
-    </article>  
     <script src="js/logic.js"></script>
 </body>
 </html>
